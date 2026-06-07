@@ -1,0 +1,221 @@
+<!DOCTYPE html>
+<html lang="id">
+
+<head>
+
+<meta charset="UTF-8">
+
+<meta name="viewport"
+content="width=device-width, initial-scale=1.0">
+
+<title>
+Smart Tourism Mapping
+</title>
+
+<link rel="stylesheet"
+href="https://unpkg.com/leaflet/dist/leaflet.css"/>
+
+<link rel="stylesheet"
+href="style.css"/>
+
+</head>
+
+<body>
+
+<!-- SIDEBAR -->
+
+<div class="sidebar">
+
+<!-- BUTTON HOME -->
+
+<a href="index.html">
+
+<button class="back-button">
+
+🏠 Kembali ke Home
+
+</button>
+
+</a>
+
+<!-- BUTTON ABOUT -->
+
+<a href="about.html">
+
+<button class="about-button">
+
+ℹ About
+
+</button>
+
+</a>
+
+<!-- JUDUL -->
+
+<h1>
+🌍 Smart Tourism Mapping
+</h1>
+
+<!-- SEARCH -->
+
+<h3>Lokasi Awal</h3>
+
+<input
+    type="text"
+    id="alamat"
+    placeholder="Contoh: Alun-Alun Malang"
+/>
+
+<button
+    class="buffer-btn"
+    onclick="cariAlamat()"
+>
+    📍 Gunakan Alamat
+</button>
+
+<h3>
+🔎 Pencarian Lokasi
+</h3>
+
+<input
+type="text"
+id="search"
+placeholder="Cari wisata..."
+>
+
+<!-- KATEGORI -->
+
+<h3>
+📂 Kategori Wisata
+</h3>
+
+<select id="kategori">
+
+<option value="Semua">
+Semua
+</option>
+
+<option value="Edukasi">
+Edukasi
+</option>
+
+<option value="Rekreasi">
+Rekreasi
+</option>
+
+<option value="Hiburan">
+Hiburan
+</option>
+
+<option value="Alam">
+Alam
+</option>
+
+<option value="Agrowisata">
+Agrowisata
+</option>
+
+</select>
+
+<!-- JAM -->
+
+<h3>
+🕒 Jam Operasional
+</h3>
+
+<select id="jam">
+
+<option value="Semua">
+Semua
+</option>
+
+<option value="Pagi">
+Pagi
+</option>
+
+<option value="Siang">
+Siang
+</option>
+
+<option value="Malam">
+Malam
+</option>
+
+</select>
+
+<h3>📍 Radius Buffer</h3>
+
+<select id="radius">
+    <option value="1000">1 Km</option>
+    <option value="2000">2 Km</option>
+    <option value="3000">3 Km</option>
+    <option value="5000">5 Km</option>
+    <option value="10000">10 Km</option>
+    <option value="25000">25 Km</option>
+    <option value="50000">50 Km</option>
+    <option value="100000">100 Km</option>
+    <option value="300000">300 Km</option>
+</select>
+
+<button onclick="cariTerdekat()" class="buffer-btn">
+📍 Cari Wisata dalam Buffer
+</button>
+
+<!-- INFO -->
+
+<h3>
+📍 Informasi Sistem
+</h3>
+
+<div class="info">
+
+WebGIS Smart Tourism ini digunakan
+untuk menampilkan persebaran
+destinasi wisata Kota Batu
+secara interaktif dan informatif.
+
+<br><br>
+
+Fitur:
+<ul>
+
+<li>Pencarian wisata</li>
+
+<li>Filter kategori</li>
+
+<li>Filter jam operasional</li>
+
+<li>Popup informasi wisata</li>
+
+<li>Foto destinasi wisata</li>
+
+</ul>
+
+</div>
+
+</div>
+
+<!-- MAP -->
+
+<div id="map"></div>
+
+<!-- LEAFLET -->
+
+<script src="https://unpkg.com/leaflet/dist/leaflet.js"></script>
+
+<!-- SCRIPT -->
+
+<script src="script.js"></script>
+
+</body>
+
+</html>
+
+<body class="map-body"></body>
+#Menambahkan Buffer
+<button onclick="cariTerdekat()">
+📍 Cari Wisata Terdekat
+</button>
+<button id="lokasiSaya" class="about-button">
+📍 Lokasi Saya
+</button>
